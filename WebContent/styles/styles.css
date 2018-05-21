@@ -1,0 +1,97 @@
+
+
+footer p {
+	padding-left: 20px;
+}
+
+nav a {
+	color: aqua;
+}
+
+nav a:hover {
+	color: aquamarine;
+}
+
+
+
+.jumbotron {
+	color: #444;
+	margin-bottom: 0;
+}
+
+.container {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.required {
+	color: red;
+}
+
+.infoHeader {
+	color: #666;
+	width: 120px;
+}
+
+
+
+
+#signInDiv {
+	/* 	background-color: aquamarine;*/
+	background-image: url("../photos/headerCar.jpg");
+	width: 100%;
+	height: 800px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: white;
+	padding-left: 35%;
+	padding-top: 50px;
+}
+
+#signInDiv label {
+	color: #aaa;
+}
+
+#signInDiv * {
+	margin-bottom: 20px;
+}
+
+#signInDiv input {
+	background-color: #222;	
+	height: 30px;
+	color: #aaa;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin-left: 15px;
+}
+
+#signInDiv h1 {
+	font-size: 78px;
+	margin-bottom: 30px;
+	color: #aaa;
+	width: 300px;
+}
+
+#carInfo {
+	margin-top: 40px;
+}
+
+#checkoutButton:hover, #buyButton:hover {
+	background: linear-gradient(90deg, aquamarine, aqua);
+	color: #555;
+	border-color: aquamarine;
+/* 	font-weight: bold;
+ */}
+
+#buyButton {
+	color: aqua;
+}
+
+#adminAddForm label, #checkoutForm label {
+	background-color: #666;
+	width: 180px;
+	color: white;
+	text-align: right;
+	padding: 3px 7px 3px 0; 
+}
+
