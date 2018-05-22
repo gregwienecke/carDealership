@@ -33,6 +33,19 @@ nav a:hover {
 	width: 120px;
 }
 
+.aquaHover:hover {
+	background: linear-gradient(90deg, aquamarine, aqua);
+	color: #555;
+	border-color: aquamarine;
+}
+
+.error {
+	color: red;
+}
+
+.hidden {
+	display: none;
+}
 
 
 
@@ -76,12 +89,9 @@ nav a:hover {
 	margin-top: 40px;
 }
 
-#checkoutButton:hover, #buyButton:hover {
-	background: linear-gradient(90deg, aquamarine, aqua);
+#buyButton:hover {
 	color: #555;
-	border-color: aquamarine;
-/* 	font-weight: bold;
- */}
+}
 
 #buyButton {
 	color: aqua;
@@ -94,4 +104,6 @@ nav a:hover {
 	text-align: right;
 	padding: 3px 7px 3px 0; 
 }
+
+
 

@@ -18,7 +18,7 @@
 			<label for="password">Password<span class="required" style="color:red;font-size:18px;margin-left:4px">*</span></label>
 			<input type="password" name="password" id="password">
 			<br>
-			<button type="submit" class="btn btn-outline-secondary">Submit</button>
+			<button type="submit" class="btn btn-outline-secondary aquaHover">Submit</button>
 		</form>
 	</div>
 </body>

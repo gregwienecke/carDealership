@@ -1,7 +1,10 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,10 +44,12 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
 			
-		// No database yet, so creating an inventory here
+		// No database yet, so creating a mock inventory here
 		// Constructor: String year, String make, String model, double price, long mileage, int mpg, String engine, String transmission, boolean isNew
 		Car car1 = new Car("2018", "Toyota", "Camry", 23495, 7, 40, "V8", "Automatic", true);
 		car1.setPhoto("photos/camry.png");
@@ -68,14 +73,17 @@ public class LoginServlet extends HttpServlet {
 
 		Car car6 = new Car("2018", "VW", "Golf", 20999, 1, 32, "V8", "Automatic", true);
 		car6.setPhoto("photos/golf.png");
+//		car6.setDealerPurchaseDateStringTest("Test");
 		car6.setCarId(6);
 
 		Car car7 = new Car("2018", "Hyundai", "Santa Fe", 30000, 10, 29, "V8", "Automatic", true);
 		car7.setPhoto("photos/santafe.png");
+//		car7.setDealerPurchaseDateStringTest("Test");
 		car7.setCarId(7);
 
 		Car car8 = new Car("2017", "Hyundai", "Elantra", 20000, 20000, 40, "V8", "Automatic", false);
 		car8.setPhoto("photos/elantra.png");
+//		car8.setDealerPurchaseDateStringTest("Test");
 		car8.setCarId(8);
 
 		Car car9 = new Car("2016", "Ford", "Focus", 18000, 31233, 35, "6-Cylinder", "Manual", false);
@@ -102,6 +110,25 @@ public class LoginServlet extends HttpServlet {
 		cars.add(car9);
 		cars.add(car10);
 		cars.add(car11);
+		
+		// Set the purchase date for all cars
+		for (Car car : cars) {
+			// Set three cars to have older purchase date to test the bidding functionality
+			if (car.getCarId() == 3 || car.getCarId() == 5 || car.getCarId() == 9) {
+				try {
+					car.setDealerPurchaseDate(sdf.parse("11/22/2017"));
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}				
+			// Set the rest of the cars to have recent purchase date
+			} else {
+				try {
+					car.setDealerPurchaseDate(sdf.parse("05/29/2018"));
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 		
 		
 		// Set a Car inventory and Transaction report on the session

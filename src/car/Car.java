@@ -1,5 +1,9 @@
 package car;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 public class Car {
 	
 	// Properties
@@ -14,6 +18,9 @@ public class Car {
 	private int mpg;
 	private String engine;
 	private String transmission;
+//	private String dealerPurchaseDateStringTest;
+//	private String dealerPurchaseDateString;
+	private Date dealerPurchaseDate;
 	
 	// Constructors
 	public Car() {}
@@ -33,7 +40,19 @@ public class Car {
 	public String toString() {
 		return this.year + " " + this.make + " " + this.model + " " + this.photo;
 	}
+	
+	public boolean isOlderThan120() {
+		// Get the date from four months ago
+		LocalDateTime fourMonthsAgo = LocalDateTime.now().minusDays(120);
+		
+		// Convert the car purchase date to a localDateTime so both data type are the same
+		LocalDateTime PurchaseDateToLDT = LocalDateTime.ofInstant(dealerPurchaseDate.toInstant(), ZoneId.systemDefault());
 
+		// Check if car is has been on the lot longer than four months
+		// Returns true if older, false if newer
+		return PurchaseDateToLDT.isBefore(fourMonthsAgo);
+	}
+	
 	public String getMake() {
 		return make;
 	}
@@ -81,12 +100,6 @@ public class Car {
 	public void setCarId(int carId) {
 		this.carId = carId;
 	}
-//	public String getCarId() {
-//		return carId;
-//	}
-//	public void setCarId(String carId) {
-//		this.carId = carId;
-//	}
 	public long getMileage() {
 		return mileage;
 	}
@@ -110,6 +123,24 @@ public class Car {
 	}
 	public void setTransmission(String transmission) {
 		this.transmission = transmission;
+	}
+//	public String getDealerPurchaseDateStringTest() {
+//		return dealerPurchaseDateStringTest;
+//	}
+//	public void setDealerPurchaseDateStringTest(String dealerPurchaseDateStringTest) {
+//		this.dealerPurchaseDateStringTest = dealerPurchaseDateStringTest;
+//	}
+//	public String getDealerPurchaseDateString() {
+//		return dealerPurchaseDateString;
+//	}
+//	public void setDealerPurchaseDateString(String dealerPurchaseDateString) {
+//		this.dealerPurchaseDateString = dealerPurchaseDateString;
+//	}
+	public Date getDealerPurchaseDate() {
+		return dealerPurchaseDate;
+	}
+	public void setDealerPurchaseDate(Date dealerPurchaseDate) {
+		this.dealerPurchaseDate = dealerPurchaseDate;
 	}
 
 }

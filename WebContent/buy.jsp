@@ -42,9 +42,18 @@
 			</p>	
 			<img src="${carToBuy.photo}" style="width:200px;height:150px"><br>
 		</div> <!-- End col -->
-		<div class="col-md-4">
+		<div class="col-md-8">
 		<h3>Enter Your Information</h3>
 			<form id="checkoutForm" action="BuyServlet" method="get">
+				<c:if test="${carToBuy.isOlderThan120()}">
+					<label for="customerBid">Lower Bid</label>
+					<input type="text" name="customerBid" id="customerBid">
+					<c:if test="${lowBid eq true}">
+						<span class="error">Max discount is 10%</span>
+					</c:if>
+					<br>
+				</c:if>
+							
 				<label for="firstName">First Name</label>
 				<input type="text" name="firstName" id="firstName" required>
 				<br>
@@ -63,7 +72,7 @@
 				
 				<input type="hidden" value="${carToBuy.carId}" name="carId" id="firstName">
 								
-				<button type="submit" id="buyButton" class="btn btn-dark">Buy</button>
+				<button type="submit" id="buyButton" class="btn btn-dark aquaHover">Buy</button>
 			</form>
 		</div>	
 

@@ -61,7 +61,7 @@
 					<label for="photo">Image path</label>				
 					<input type="text" name="photo" id="photo">
 					<br>				
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-dark aquaHover">Submit</button>
 				</form>
 			</div>
 			

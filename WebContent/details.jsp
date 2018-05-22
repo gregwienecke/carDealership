@@ -79,7 +79,7 @@
 		 	
 		 	<br>
 		 	<a href="CheckoutServlet?carId=${carDetails.carId}">
-		 		<button class="btn btn-dark" id="checkoutButton">Checkout</button>
+		 		<button class="btn btn-dark aquaHover" id="checkoutButton">Checkout</button>
 		 	</a>		
 		</div>
 		<div class="col-md-8">

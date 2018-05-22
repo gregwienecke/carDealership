@@ -44,7 +44,10 @@ public class CheckoutServlet extends HttpServlet {
 				session.setAttribute("carToBuy", cars.get(i));
 			}
 		}
-
+		
+		// Reset just in case
+		session.setAttribute("lowBid", false);
+		
 		RequestDispatcher rs = request.getRequestDispatcher("buy.jsp");
 		rs.forward(request, response);
 	}
